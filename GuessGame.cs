@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 
 public class Guess
 {
     private int _userGuess;
     private DateTime _guessTime;
+    private List<int> _guesses;
 
     public int NumberToGuess { get; set; }
     public int Attempts { get; set; }
@@ -19,8 +21,14 @@ public class Guess
         get { return _guessTime; }
     }
 
+    public List<int> Guesses
+    {
+        get { return _guesses; }
+    }
+
     public Guess()
     {
+        _guesses = new List<int>();
         ResetGame();
     }
 
@@ -28,6 +36,7 @@ public class Guess
     {
         _userGuess = userGuess;
         _guessTime = DateTime.Now;
+        _guesses = new List<int> { userGuess };
         ResetGame();
     }
 
@@ -35,12 +44,14 @@ public class Guess
     {
         Attempts = 0;
         NumberToGuess = new Random().Next(1, 101);
+        _guesses.Clear();
     }
 
     public string CheckGuess(int userGuess)
     {
         _userGuess = userGuess;
         _guessTime = DateTime.Now;
+        _guesses.Add(userGuess);
         Attempts++;
         if (userGuess == NumberToGuess)
         {
