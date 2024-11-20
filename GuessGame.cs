@@ -51,8 +51,17 @@ public class Guess
     {
         _userGuess = userGuess;
         _guessTime = DateTime.Now;
+
+        if (_guesses.Contains(userGuess))
+        {
+            int index = _guesses.IndexOf(userGuess);
+            int turnsAgo = _guesses.Count - index;
+            return $"You guessed this number {turnsAgo} turns ago!";
+        }
+
         _guesses.Add(userGuess);
         Attempts++;
+
         if (userGuess == NumberToGuess)
         {
             return $"Congratulations! You guessed the correct number: {NumberToGuess}. Do you want to play again? (yes/no)";

@@ -14,17 +14,25 @@ class Program
         do
         {
             Console.Write("Enter your guess: ");
-            userGuess = int.Parse(Console.ReadLine());
-            string result = guessGame.CheckGuess(userGuess);
-            Console.WriteLine(result);
-
-            if (userGuess == randomNumber)
+            string input = Console.ReadLine();
+            if (int.TryParse(input, out userGuess))
             {
-                Console.WriteLine("Congratulations! You've guessed the correct number.");
-                break;
-            }
-        } while (userGuess != randomNumber);
+                string result = guessGame.CheckGuess(userGuess);
+                Console.WriteLine(result);
 
+                if (userGuess == randomNumber)
+                {
+                    Console.WriteLine("Congratulations! You've guessed the correct number.");
+                    break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invalid input. Please enter a valid number.");
+            }
+        } while (true);
+
+        Console.WriteLine($"You Won! The answer was {randomNumber}.");
         Console.WriteLine("Thank you for playing!");
     }
 }
