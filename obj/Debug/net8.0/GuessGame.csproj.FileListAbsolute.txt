@@ -15,7 +15,6 @@
 /workspaces/GuessGame/GuessGame/obj/Debug/net8.0/GuessGame.AssemblyInfoInputs.cache
 /workspaces/GuessGame/GuessGame/obj/Debug/net8.0/GuessGame.AssemblyInfo.cs
 /workspaces/GuessGame/GuessGame/obj/Debug/net8.0/GuessGame.csproj.CoreCompileInputs.cache
-/workspaces/GuessGame/GuessGame/obj/Debug/net8.0/GuessGame.MvcApplicationPartsAssemblyInfo.cs
 /workspaces/GuessGame/GuessGame/obj/Debug/net8.0/GuessGame.MvcApplicationPartsAssemblyInfo.cache
 /workspaces/GuessGame/GuessGame/obj/Debug/net8.0/GuessGame.sourcelink.json
 /workspaces/GuessGame/GuessGame/obj/Debug/net8.0/staticwebassets.build.json
