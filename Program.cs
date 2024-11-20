@@ -35,7 +35,7 @@ class Program
             }
             else
             {
-                Console.WriteLine("Do you want to play again? (yes/no)");
+                Console.WriteLine("Invalid input. Please enter a valid number.");
             }
         } while (true);
 
